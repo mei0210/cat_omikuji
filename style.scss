@@ -1,0 +1,153 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+.wrapper {
+  max-width: 500px;
+  width: 100%;
+  background-color: #efefef;
+  margin: 0 auto;
+  box-shadow: 0 0 8px gray;
+}
+
+header {
+  background-color: #fff;
+  border-bottom: 2px solid #efefef;
+
+  h1 {
+    text-align: center;
+    height: 50px;
+    font-size: 25px;
+    line-height: 50px;
+  }
+}
+
+.omikuji {
+  &_balloon {
+    position: relative;
+    margin: 70px 70px 10px;
+    padding: 15px;
+    color: #555;
+    font-size: 16px;
+    background: #fff;
+    border-radius: 10px;
+
+    &:before {
+      content: "";
+      position: absolute;
+      top: 100%;
+      right: 25px;
+      border: 15px solid transparent;
+      border-top: 15px solid #fff;
+    }
+
+    &_txt {
+      text-align: center;
+      font-size: 15px;
+      cursor: default;
+    }
+  }
+
+  &_cat {
+    display: block;
+    width: 50%;
+    margin: 0 auto;
+    padding-bottom: 50px;
+
+    &-active {
+      transition: 5s;
+      transform: rotate(4turn);
+    }
+  }
+
+  &_btn {
+    width: 140px;
+    height: 140px;
+    background-color: #285294;
+    border-radius: 50%;
+    margin: 0 auto;
+    text-align: center;
+    line-height: 140px;
+    color: #fff;
+    font-weight: bold;
+    font-size: 20px;
+    cursor: pointer;
+    user-select: none;
+    transition-duration: 0.3s;
+
+    &:hover {
+      opacity: 0.5;
+    }
+
+    &-none {
+      display: none;
+    }
+  }
+
+  &_result {
+    display: none;
+    background-color: #fff;
+    max-width: 440px;
+    margin: 0 auto;
+
+    &_fortune {
+      padding: 50px 0;
+      text-align: center;
+      font-size: 50px;
+      font-weight: bold;
+      color: #285294;
+    }
+
+    hr {
+      display: block;
+      height: 3px;
+      margin: 0 auto;
+      background-color: #285294;
+      width: 75%;
+      border: none;
+    }
+
+    &_disc {
+      width: 75%;
+      margin: 0 auto;
+      padding: 20px 0;
+      font-size: 14px;
+      color: #285294;
+      span{
+        padding-left: 10px;
+        color: #555;
+      }
+    }
+
+    &_cat {
+      display: block;
+      width: 50%;
+      margin: 0 auto;
+      padding: 40px 0;
+
+      img {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.twitter-share-button {
+  display: block;
+  margin: 50px auto;
+}
+
+footer {
+  p {
+    text-align: center;
+    font-size: 13px;
+    height: 40px;
+    line-height: 40px;
+  }
+}
