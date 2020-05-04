@@ -29,7 +29,7 @@
     </header>
 
     <main class="omikuji">
-      <div class="omikuji_balloon">
+      <div class="omikuji_balloon" id="ballon">
         <p class="omikuji_balloon_txt">おみくじひくのにゃ</p>
       </div>
       <img class="omikuji_cat" src="img/cat-sit.png" alt="猫">
@@ -99,6 +99,22 @@
       word.textContent = word_array[n];
       cat.innerHTML = cat_array[n];
     });
+
+    $(function () {
+        setTimeout('pukapuka()'); //アニメーションを実行
+    });
+
+    function pukapuka() {
+        $('#ballon').animate({
+            marginTop: '-=10px',
+            marginBottom: '+=10px'
+        }, 800).animate({
+            marginTop: '+=10px',
+            marginBottom: '-=10px'
+        }, 800);
+
+        setTimeout('pukapuka()', 1600); //アニメーションを繰り返す間隔
+      }
 
     // ボタン押すと猫くるくる
     $('#push').click(function() {
