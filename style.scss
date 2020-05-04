@@ -1,6 +1,9 @@
+$blue: #285294;
+
 * {
   padding: 0;
   margin: 0;
+  text-decoration: none;
 }
 
 body {
@@ -16,15 +19,92 @@ body {
   box-shadow: 0 0 8px gray;
 }
 
-header {
-  background-color: #fff;
-  border-bottom: 2px solid #efefef;
+.header {
+  position: relative;
+  display: block;
+  height: 50px;
 
-  h1 {
+  &_title {
+    background-color: #fff;
+    border-bottom: 2px solid #efefef;
+    position: absolute;
+    z-index: 7;
+    width: 100%;
     text-align: center;
-    height: 50px;
-    font-size: 25px;
+    font-size: 20px;
     line-height: 50px;
+    cursor: default;
+  }
+
+  &_hamb-btn {
+    position: absolute;
+    z-index: 10;
+    top: 0;
+    right: 5px;
+    box-sizing: border-box;
+    width: 50px;
+    height: 50px;
+    padding: 14px;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    &_line {
+      display: block;
+      width: 100%;
+      border-top: 2px solid #555;
+      border-radius: 5px;
+      border-color: #555;
+      transition: all 0.3s ease;
+
+      &:nth-child(2) {
+        margin: 7px 0;
+      }
+    }
+  }
+
+
+  .hamb-active {
+    &:first-child {
+      -webkit-transform: translateY(9px) rotate(45deg);
+      transform: translateY(9px) rotate(45deg);
+    }
+
+    &:nth-child(2) {
+      opacity: 0;
+    }
+
+    &:last-child {
+      -webkit-transform: translateY(-9px) rotate(-45deg);
+      transform: translateY(-9px) rotate(-45deg);
+    }
+  }
+
+  &_menuSP {
+    position: absolute;
+    z-index: 5;
+    top: -200px;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 70px 0 20px;
+    text-align: center;
+    background-color: #fff;
+    user-select: none;
+
+    &_item {
+      display: inline-block;
+      color: #555;
+      font-size: 16px;
+      margin: 10px 0;
+
+      &:hover {
+        opacity: 0.5;
+      }
+    }
   }
 }
 
@@ -69,7 +149,7 @@ header {
   &_btn {
     width: 140px;
     height: 140px;
-    background-color: #285294;
+    background-color: $blue;
     border-radius: 50%;
     margin: 0 auto;
     text-align: center;
@@ -84,10 +164,6 @@ header {
     &:hover {
       opacity: 0.5;
     }
-
-    &-none {
-      display: none;
-    }
   }
 
   &_result {
@@ -99,16 +175,16 @@ header {
     &_fortune {
       padding: 50px 0;
       text-align: center;
-      font-size: 50px;
+      font-size: 70px;
       font-weight: bold;
-      color: #285294;
+      color: $blue;
     }
 
     hr {
       display: block;
       height: 3px;
       margin: 0 auto;
-      background-color: #285294;
+      background-color: $blue;
       width: 75%;
       border: none;
     }
@@ -116,12 +192,17 @@ header {
     &_disc {
       width: 75%;
       margin: 0 auto;
-      padding: 20px 0;
+      padding: 25px 0;
       font-size: 14px;
-      color: #285294;
-      span{
-        padding-left: 10px;
-        color: #555;
+      color: $blue;
+
+      &_txt {
+        margin: 10px 0;
+
+        span {
+          padding-left: 10px;
+          color: #555;
+        }
       }
     }
 
@@ -133,6 +214,20 @@ header {
 
       img {
         width: 100%;
+      }
+    }
+
+    &_replaybtn {
+      padding: 20px 30px;
+      text-align: center;
+      background-color: $blue;
+      color: #fff;
+      cursor: pointer;
+      user-select: none;
+      transition-duration: 0.3s;
+
+      &:hover {
+        opacity: 0.5;
       }
     }
   }

@@ -13,8 +13,19 @@
 
 <body>
   <div class="wrapper">
-    <header>
-      <h1>猫おみくじ</h1>
+    <header class="header">
+      <h1 class="header_title">猫おみくじ</h1>
+      <div class="header_hamb-btn" id="hamb-btn">
+        <span class="header_hamb-btn_line"></span>
+        <span class="header_hamb-btn_line"></span>
+        <span class="header_hamb-btn_line"></span>
+      </div>
+
+      <div class="header_menuSP" id="topmenuSP">
+        <a class="header_menuSP_item" href="https://mei0210.github.io/cat_omikuji/">ホーム</a>
+        <a class="header_menuSP_item" href="/about">つくった人</a>
+        <a class="header_menuSP_item" href="https://forms.gle/Cpyty5EkjtWG5FhC6" target="_blank">お問い合わせ</a>
+      </div>
     </header>
 
     <main class="omikuji">
@@ -27,23 +38,79 @@
         <div class="omikuji_result_fortune" id="fortune"></div>
         <hr>
         <div class="omikuji_result_disc">
-          <p>金運<span id="gold"></span></p>
-          <p>恋愛<span id="love"></span></p>
-          <p>健康<span id="health"></span></p>
-          <p>仕事<span id="work"></span></p>
-          <p>ラッキーアイテム<span id="item"></span></p>
-          <p>ラッキーワード<span id="word"></span></p>
+          <p class="omikuji_result_disc_txt">金運<span id="gold"></span></p>
+          <p class="omikuji_result_disc_txt">恋愛<span id="love"></span></p>
+          <p class="omikuji_result_disc_txt">健康<span id="health"></span></p>
+          <p class="omikuji_result_disc_txt">仕事<span id="work"></span></p>
+          <p class="omikuji_result_disc_txt">ラッキーアイテム<span id="item"></span></p>
+          <p class="omikuji_result_disc_txt">ラッキーワード<span id="word"></span></p>
         </div>
         <hr>
         <div class="omikuji_result_cat" id="result_cat"></div>
+        <a href="https://mei0210.github.io/cat_omikuji/">
+          <div class="omikuji_result_replaybtn">もう一度ひく!</div>
+        </a>
+
       </div>
-      <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-text="猫おみくじ" data-url="https://mei0210.github.io/cat_omikuji/" data-lang="ja" data-size="large">Tweet</a>
+      <div class="" id="twitter_button">
+
+      </div>
+      <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" id="twitter_button" class="twitter-share-button" data-text="猫おみくじ" data-url="https://mei0210.github.io/cat_omikuji/" data-lang="ja" data-size="large">Tweet</a>
     </main>
 
     <footer>
       <p>猫おみくじ</p>
     </footer>
   </div>
+
+  <script type="text/javascript">
+    const fortune = document.getElementById('fortune');
+    const gold = document.getElementById('gold');
+    const love = document.getElementById('love');
+    const health = document.getElementById('health');
+    const work = document.getElementById('work');
+    const item = document.getElementById('item');
+    const word = document.getElementById('word');
+    const cat = document.getElementById('result_cat');
+
+    push.addEventListener('click', () => {
+      const fortune_array = ["大吉", "中吉", "小吉", "末吉", "凶"]
+      const gold_array = ["投資で不労所得を得る", "ペット動画をYouTubeにあげて副収入を得る", "買った魚を猫に盗まれる", "空き巣が入る。野良猫が家に住みつく", "YouTuberを目指すも炎上。財布を落とす"]
+      const love_array = ["結婚よし。猫を飼うとラブラブ", "告白よし。猫カフェデートが吉", "出会いがなくてマッチングアプリを始める", "遊園地デートで黒ずくめの組織に薬を飲まされる", "1年片思いして告白するもフられる"]
+      const health_array = ["マッチョ", "腹筋が割れる", "猫にひっかかれる。薄毛が進行するかも", "体臭がマタタビ", "間違えてキャットフード食べちゃう"]
+      const work_array = ["猫カフェビジネスで大儲け", "上司に褒められる", "退職するとニートになる", "人間関係で悩むも猫で癒される", "クビになる。公園で猫とホームレス生活"]
+      const item_array = ["マタタビ", "猫じゃらし", "キャットフード", "ファブリーズ", "白米"]
+      const word_array = ["「今してみたいこと？片思いかな」　-Rolandの名言-",
+        "「本気を出したら火星人でも口説ける」　-Rolandの名言-",
+        "「オレ1時間あったら東アジアの女性くらい全員幸せにできるので」　-Rolandの名言-",
+        "「俺が面接官やったら多分全員落ちるよ。あ、恋にね」　-Rolandの名言-",
+        "「冴えない男と飲むリシャールよりも、俺と飲む雨水」　-Rolandの名言-"
+      ]
+      const cat_array = ["<img src ='img/cat-koban.png'>", "<img src ='img/cat-nezumi.png'>", "<img src ='img/cat-fish.png'>", "<img src ='img/cat-pc.png'>", "<img src ='img/cat-cover.png'>"]
+      // ランダムな整数を生成
+      const n = Math.floor(Math.random() * fortune_array.length);
+      // 結果
+      fortune.textContent = fortune_array[n];
+      gold.textContent = gold_array[n];
+      love.textContent = love_array[n];
+      health.textContent = health_array[n];
+      work.textContent = work_array[n];
+      item.textContent = item_array[n];
+      word.textContent = word_array[n];
+      cat.innerHTML = cat_array[n];
+    });
+
+    // ボタン押すと猫くるくる
+    $('#push').click(function() {
+      $('.omikuji_cat').addClass("omikuji_cat-active");
+    });
+
+    // 猫くるくるしたらボタンが消えて結果表示
+    $('.omikuji_cat').on('transitionend', function() {
+      $('.omikuji_btn').css('display', 'none');
+      $('.omikuji_result').fadeIn();
+    });
+  </script>
 
   <script type="text/javascript" src="script.js"></script>
 </body>
