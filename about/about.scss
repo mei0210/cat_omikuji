@@ -1,0 +1,33 @@
+.maker {
+  background-color: #fff;
+  margin: 50px 30px;
+  padding: 70px 0px 10px;
+
+  &_title {
+    text-align: center;
+    padding-bottom: 30px;
+    font-size: 20px;
+  }
+
+  &_person {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+
+    &_img {
+      display: block;
+      width: 30%;
+      margin: 0 auto;
+    }
+
+    &_inner {
+      width: 50%;
+      font-size: 14px;
+      &_name {
+        padding-bottom: 20px;
+      }
+
+      &_desc {}
+    }
+  }
+}
