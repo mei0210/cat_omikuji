@@ -1,7 +1,7 @@
 .maker {
   background-color: #fff;
   margin: 50px 30px;
-  padding: 70px 0px 10px;
+  padding: 70px 0 10px;
 
   &_title {
     text-align: center;
@@ -17,17 +17,24 @@
     &_img {
       display: block;
       width: 30%;
+      height: 120px;
       margin: 0 auto;
+      @media screen and (max-width: 450px){
+        width: 40%;
+      }
     }
 
     &_inner {
       width: 50%;
       font-size: 14px;
+
       &_name {
-        padding-bottom: 20px;
+        padding-top: 10px;
       }
 
-      &_desc {}
+      &_desc {
+        padding: 15px 0 5px;
+      }
     }
   }
 }
